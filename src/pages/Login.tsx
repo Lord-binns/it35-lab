@@ -10,9 +10,11 @@ import {
     useIonRouter
 } from '@ionic/react';
 
+
+
+
 const Login: React.FC = () => {
   const navigation = useIonRouter();
-
   const doLogin = () => {
       navigation.push('/it35-lab/app','forward','replace');
   }
@@ -24,8 +26,8 @@ const Login: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className='ion-padding'>
-          <IonButton onClick={() => doLogin()} expand="full">
-              Login
+      <IonButton onClick={() => doLogin()} expand="full">
+          Login    
           </IonButton>
       </IonContent>
     </IonPage>

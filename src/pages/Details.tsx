@@ -17,7 +17,7 @@ const Details: React.FC = () => {
           <IonButtons slot='start'>
               <IonBackButton defaultHref='/it35-lab/app/home'></IonBackButton>
           </IonButtons>
-          <IonTitle>Home Details</IonTitle>
+          <IonTitle>Details</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className='ion-padding'>
