@@ -21,7 +21,7 @@ const Search: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen>
 
-        makoy
+        
       </IonContent>
     </IonPage>
   );
