@@ -21,6 +21,9 @@ import React from 'react';
           </IonToolbar>
         </IonHeader>
         <IonContent fullscreen>
+        <h1> hello I am vince</h1>
+        <h1> Welcome to cross platform application development</h1>
+      
         </IonContent>
       </IonPage>
     );

@@ -21,6 +21,7 @@ import React from 'react';
           </IonToolbar>
         </IonHeader>
         <IonContent fullscreen>
+          hello 
         </IonContent>
       </IonPage>
     );
