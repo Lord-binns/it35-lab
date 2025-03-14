@@ -1,18 +1,21 @@
 import { 
+  IonAlert,
+  IonAvatar,
   IonButton,
   IonButtons,
     IonContent, 
     IonHeader, 
+    IonIcon, 
     IonInput, 
     IonInputPasswordToggle, 
     IonItem, 
     IonMenuButton, 
     IonPage, 
-    IonRippleEffect, 
     IonTitle, 
     IonToolbar, 
     useIonRouter
 } from '@ionic/react';
+import { logoApple, logoIonic } from 'ionicons/icons';
 
 
 
@@ -30,10 +33,12 @@ const Login: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <div className="ion-activatable ripple-parent rectangle">
-        <IonRippleEffect></IonRippleEffect>
-      </div>
-      
+      <IonAvatar style={{ width: "200px", height: "200px",
+         display: "flex", alignItems: "center", justifyContent: "center" }}>
+  <IonIcon icon={logoApple} style={{ fontSize: "150px" }} />
+</IonAvatar>
+
+
       <IonItem>
         <IonInput label="Username" placeholder="@Lord-binns"></IonInput>
       </IonItem>
@@ -48,9 +53,11 @@ const Login: React.FC = () => {
       <IonContent className='ion-padding'>
 
         
-      <IonButton onClick={() => doLogin()} expand="full">
+      <IonButton  id="present-alert" onClick={() => doLogin()} expand="full">
           Login    
           </IonButton>
+      
+          
       </IonContent>
     </IonPage>
   );
