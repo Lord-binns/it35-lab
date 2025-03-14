@@ -3,8 +3,12 @@ import {
   IonButtons,
     IonContent, 
     IonHeader, 
+    IonInput, 
+    IonInputPasswordToggle, 
+    IonItem, 
     IonMenuButton, 
     IonPage, 
+    IonRippleEffect, 
     IonTitle, 
     IonToolbar, 
     useIonRouter
@@ -25,7 +29,25 @@ const Login: React.FC = () => {
           <IonTitle>Login</IonTitle>
         </IonToolbar>
       </IonHeader>
+
+      <div className="ion-activatable ripple-parent rectangle">
+        <IonRippleEffect></IonRippleEffect>
+      </div>
+      
+      <IonItem>
+        <IonInput label="Username" placeholder="@Lord-binns"></IonInput>
+      </IonItem>
+      
+      <IonItem> 
+      <IonInput type="password" label="Password" value="imSorry">
+      <IonInputPasswordToggle slot="end"></IonInputPasswordToggle>
+    </IonInput>
+    </IonItem>
+
+
       <IonContent className='ion-padding'>
+
+        
       <IonButton onClick={() => doLogin()} expand="full">
           Login    
           </IonButton>
