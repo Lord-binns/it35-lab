@@ -3,28 +3,39 @@ import {
   IonAvatar,
   IonButton,
   IonButtons,
-    IonContent, 
-    IonHeader, 
-    IonIcon, 
-    IonInput, 
-    IonInputPasswordToggle, 
-    IonItem, 
-    IonMenuButton, 
-    IonPage, 
-    IonTitle, 
-    IonToolbar, 
-    useIonRouter
+  IonContent, 
+  IonHeader, 
+  IonIcon, 
+  IonInput, 
+  IonInputPasswordToggle, 
+  IonItem, 
+  IonMenuButton, 
+  IonPage, 
+  IonTitle, 
+  IonToolbar, 
+  IonToast, 
+  useIonRouter
 } from '@ionic/react';
-import { logoApple, logoIonic } from 'ionicons/icons';
-
-
-
+import { useState } from "react";
+import { logoApple } from 'ionicons/icons';
 
 const Login: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showToast, setShowToast] = useState(false);
   const navigation = useIonRouter();
+
   const doLogin = () => {
-      navigation.push('/it35-lab/app','forward','replace');
-  }
+    setShowToast(true);
+    setTimeout(() => {
+      navigation.push('/it35-lab/app', 'forward', 'replace');
+    }, 1000);
+  };
+
+  const doRegister = () => {
+    navigation.push('/it35-lab/Signup', 'forward', 'replace');
+  };
+
   return (
     <IonPage>
       <IonHeader>
@@ -33,31 +44,50 @@ const Login: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonAvatar style={{ width: "200px", height: "200px",
-         display: "flex", alignItems: "center", justifyContent: "center" }}>
-  <IonIcon icon={logoApple} style={{ fontSize: "150px" }} />
-</IonAvatar>
+      <IonAvatar style={{ width: "200px", height: "200px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <IonIcon icon={logoApple} style={{ fontSize: "150px" }} />
+      </IonAvatar>
 
+      <IonContent className='ion-padding' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <IonItem>
+          <IonInput
+            label="Email"
+            type="email"
+            placeholder="example@domain.com"
+            value={email}
+            onIonChange={e => setEmail(e.detail.value!)}
+            required
+          />
+        </IonItem>
 
-      <IonItem>
-        <IonInput label="Username" placeholder="@Lord-binns"></IonInput>
-      </IonItem>
-      
-      <IonItem> 
-      <IonInput type="password" label="Password" value="imSorry">
-      <IonInputPasswordToggle slot="end"></IonInputPasswordToggle>
-    </IonInput>
-    </IonItem>
+        <IonItem>
+          <IonInput
+            type="password"
+            label="Password"
+            value={password}
+            onIonChange={e => setPassword(e.detail.value!)}
+            required
+          >
+            <IonInputPasswordToggle slot="end" />
+          </IonInput>
+        </IonItem>
 
+        <IonButton id="present-toast" onClick={doLogin} expand="full">
+          Login
+        </IonButton>
 
-      <IonContent className='ion-padding'>
+        <IonToast
+          isOpen={showToast}
+          onDidDismiss={() => setShowToast(false)}
+          trigger="present-toast"
+          duration={1000}
+          message="Login Successfully, Redirecting..."
+          position="top"
+        />
 
-        
-      <IonButton  id="present-alert" onClick={() => doLogin()} expand="full">
-          Login    
-          </IonButton>
-      
-          
+        <IonButton onClick={doRegister} expand="full" color="secondary">
+          Register
+        </IonButton>
       </IonContent>
     </IonPage>
   );
