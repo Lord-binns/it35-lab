@@ -53,7 +53,7 @@ const Login: React.FC = () => {
           <IonInput
             label="Email"
             type="email"
-            placeholder="example@domain.com"
+            placeholder="@Lord-binns"
             value={email}
             onIonChange={e => setEmail(e.detail.value!)}
             required
