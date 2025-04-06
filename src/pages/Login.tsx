@@ -70,10 +70,10 @@ const Login: React.FC = () => {
               overflow: 'hidden' 
             }}
           >
-            <IonIcon 
-              icon={logoIonic}
-              color='primary'
-              style={{ fontSize: '120px', color: '#6c757d' }} 
+            <img 
+             src="https://i.pinimg.com/736x/f4/b6/6a/f4b66a73b1c00e84d0f42342043f6fe5.jpg" 
+             alt="User Avatar" 
+             style={{ width: '100%', height: '100%' }} 
             />
           </IonAvatar>
           <h1 style={{
@@ -104,7 +104,7 @@ const Login: React.FC = () => {
           Login
         </IonButton>
 
-        <IonButton routerLink="/it35-lab/Signup" expand="full" fill="clear" shape='round'>
+        <IonButton routerLink="/it35-lab/register" expand="full" fill="clear" shape='round'>
           Don't have an account? Register here
         </IonButton>
 
