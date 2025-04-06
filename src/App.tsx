@@ -35,7 +35,6 @@ import './theme/variables.css';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Menu from './pages/Menu';
-import Signup from './pages/Register';
 import Register from './pages/Register';
 
 setupIonicReact();
