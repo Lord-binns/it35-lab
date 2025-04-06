@@ -93,7 +93,7 @@ const Register: React.FC = () => {
             <IonCardHeader className="text-center mt-6">
               <IonAvatar className="mx-auto w-24 h-24">
                 <img
-                  src="https://i.pinimg.com/736x/83/48/67/834867345c35b4a6ccec9948535c8d6b.jpg"
+                  src="https://i.pinimg.com/736x/60/cb/08/60cb08f12e3b6d3a20cfd95acd031aed.jpg"
                   alt="User Avatar"
                   className="w-full h-full object-cover rounded-full"
                 />
