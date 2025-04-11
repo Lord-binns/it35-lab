@@ -36,6 +36,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Menu from './pages/Menu';
 import Register from './pages/Register';
+import EditAccount from './pages/EditProfile';
 
 setupIonicReact();
 
