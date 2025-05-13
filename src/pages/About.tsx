@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   IonContent, IonPage, IonItem, IonText, IonCol, IonGrid, IonRow,
-  IonAvatar, IonImg, IonHeader, IonButtons, IonBackButton
+  IonAvatar, IonImg, IonHeader, IonButtons, IonBackButton, IonInput, IonButton
 } from '@ionic/react';
 import { supabase } from '../utils/supabaseClient';
 import { useHistory } from 'react-router-dom';
@@ -12,6 +12,10 @@ const About: React.FC = () => {
   const [lastName, setLastName] = useState('');
   const [username, setUsername] = useState('');
   const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
+  const [hobbies, setHobbies] = useState('Music, Traveling, Coding, Gaming');
+  const [quote, setQuote] = useState('“Life is what happens when you’re busy making other plans.” - John Lennon');
+  const [additionalInfo, setAdditionalInfo] = useState('I love experimenting with new technology and enjoy working on personal projects.');
+  const [isEditable, setIsEditable] = useState(false);  // To toggle between editable and non-editable mode
   const history = useHistory();
 
   useEffect(() => {
@@ -45,6 +49,11 @@ const About: React.FC = () => {
 
     fetchSessionAndData();
   }, []);
+
+  // Toggle edit mode
+  const toggleEditMode = () => {
+    setIsEditable(!isEditable);
+  };
 
   return (
     <IonPage>
@@ -87,19 +96,75 @@ const About: React.FC = () => {
           <IonRow>
             <IonCol>
               <IonImg 
-                src="https://media.giphy.com/media/3o6gE5aYIlwYOTzYVe/giphy.gif" // Add your GIF URL here
+                src="https://i.pinimg.com/originals/ef/8b/bd/ef8bbd4554dedcc2fd1fd15ab0ebd7a1.gif" // Add your GIF URL here
                 style={{ width: '100%', height: 'auto', borderRadius: '10px' }}
               />
             </IonCol>
           </IonRow>
 
-          {/* Placeholder for hobbies or additional info */}
+          {/* Editable Hobbies Section */}
           <IonRow>
             <IonCol>
               <IonText>
                 <h3 style={{ fontSize: '1.5rem' }}>Hobbies</h3>
-                <p style={{ fontSize: '1.2rem' }}>Music, Traveling, Coding, Gaming</p> {/* Customize this section as needed */}
+                {isEditable ? (
+                  <IonInput
+                    value={hobbies}
+                    onIonChange={(e) => setHobbies(e.detail.value!)}
+                    style={{ fontSize: '1.2rem' }}
+                    placeholder="Enter your hobbies"
+                  />
+                ) : (
+                  <p style={{ fontSize: '1.2rem' }}>{hobbies}</p>
+                )}
               </IonText>
+            </IonCol>
+          </IonRow>
+
+          {/* Editable Quote Section */}
+          <IonRow>
+            <IonCol>
+              <IonText>
+                <h3 style={{ fontSize: '1.5rem' }}>Favorite Quote</h3>
+                {isEditable ? (
+                  <IonInput
+                    value={quote}
+                    onIonChange={(e) => setQuote(e.detail.value!)}
+                    style={{ fontSize: '1.2rem' }}
+                    placeholder="Enter your favorite quote"
+                  />
+                ) : (
+                  <p style={{ fontSize: '1.2rem' }}>{quote}</p>
+                )}
+              </IonText>
+            </IonCol>
+          </IonRow>
+
+          {/* Editable Additional Info Section */}
+          <IonRow>
+            <IonCol>
+              <IonText>
+                <h3 style={{ fontSize: '1.5rem' }}>Additional Info</h3>
+                {isEditable ? (
+                  <IonInput
+                    value={additionalInfo}
+                    onIonChange={(e) => setAdditionalInfo(e.detail.value!)}
+                    style={{ fontSize: '1.2rem' }}
+                    placeholder="Enter additional info"
+                  />
+                ) : (
+                  <p style={{ fontSize: '1.2rem' }}>{additionalInfo}</p>
+                )}
+              </IonText>
+            </IonCol>
+          </IonRow>
+
+          {/* Toggle Edit Mode Button */}
+          <IonRow>
+            <IonCol className="ion-text-center">
+              <IonButton onClick={toggleEditMode} expand="full" shape="round">
+                {isEditable ? 'Save' : 'Edit'}
+              </IonButton>
             </IonCol>
           </IonRow>
         </IonGrid>
