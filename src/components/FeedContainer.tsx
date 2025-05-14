@@ -124,7 +124,7 @@ const FeedContainer = () => {
                   placeholder="Write a post..."
                 />
               </IonCardContent>
-              <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0.5rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0.5rem' , }}>
                 <IonButton onClick={createPost}>Post</IonButton>
               </div>
             </IonCard>

@@ -9,7 +9,29 @@ interface SearchContainerProps {
 const SearchContainer: React.FC<SearchContainerProps> = ({ placeholder = 'Search items...' }) => {
   const [searchText, setSearchText] = useState('');
 
-  const items = ['Apple', 'Banana', 'Cherry', 'Date', 'Grapes', 'Mango', 'Orange']; // Sample data
+  const items = [
+  'ReactJS',
+  'Ionic Framework',
+  'Firebase',
+  'Supabase',
+  'REST API',
+  'GraphQL',
+  'TypeScript',
+  'JavaScript',
+  'Responsive Design',
+  'UI/UX Design',
+  'Component Reusability',
+  'Version Control',
+  'CI/CD',
+  'Unit Testing',
+  'State Management',
+  'Cross-Platform Development',
+  'Progressive Web App (PWA)',
+  'Backend as a Service (BaaS)',
+  'Authentication',
+  'Deployment'
+]; // Application Development related terms
+
 
   const filteredItems = items.filter(item =>
     item.toLowerCase().includes(searchText.toLowerCase())

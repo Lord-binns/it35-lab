@@ -4,9 +4,9 @@ import { heart, heartOutline } from 'ionicons/icons';
 
 const FavoritesContainer: React.FC = () => {
   const [favorites, setFavorites] = useState<{ title: string; img: string; liked: boolean }[]>([
-    { title: 'Relaxing Beach', img: 'https://media.giphy.com/media/3o6gE5aYIlwYOTzYVe/giphy.gif', liked: false },
-    { title: 'Cozy Fireplace', img: 'https://media.giphy.com/media/1wXaU5mWyb8d8/giphy.gif', liked: false },
-    { title: 'Mountain Adventure', img: 'https://media.giphy.com/media/26xBsWf4VQV8p17TO/giphy.gif', liked: false }
+    { title: 'Relaxing Beach', img: 'https://www.gifcen.com/wp-content/uploads/2021/03/passover-gif-5.gif', liked: false },
+    { title: 'Cozy Fireplace', img: 'https://i.makeagif.com/media/1-07-2019/RSqEi_.gif', liked: false },
+    { title: 'Mountain Adventure', img: 'https://i.pinimg.com/originals/75/98/71/759871bc3cd242ae9c0bfd1fd058bdb0.gif', liked: false }
   ]);
 
   const toggleLike = (index: number) => {
