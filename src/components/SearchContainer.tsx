@@ -6,32 +6,26 @@ interface SearchContainerProps {
   placeholder?: string;
 }
 
-const SearchContainer: React.FC<SearchContainerProps> = ({ placeholder = 'Search items...' }) => {
+const CleanEarthSearch: React.FC<SearchContainerProps> = ({ placeholder = 'Search sustainable practices...' }) => {
   const [searchText, setSearchText] = useState('');
 
   const items = [
-  'ReactJS',
-  'Ionic Framework',
-  'Firebase',
-  'Supabase',
-  'REST API',
-  'GraphQL',
-  'TypeScript',
-  'JavaScript',
-  'Responsive Design',
-  'UI/UX Design',
-  'Component Reusability',
-  'Version Control',
-  'CI/CD',
-  'Unit Testing',
-  'State Management',
-  'Cross-Platform Development',
-  'Progressive Web App (PWA)',
-  'Backend as a Service (BaaS)',
-  'Authentication',
-  'Deployment'
-]; // Application Development related terms
-
+    'Recycling',
+    'Composting',
+    'Energy Conservation',
+    'Tree Planting',
+    'Sustainable Transport',
+    'Clean Energy',
+    'Waste Reduction',
+    'Plastic-Free Alternatives',
+    'Eco-Friendly Packaging',
+    'Water Conservation',
+    'Sustainable Agriculture',
+    'Eco-Tourism',
+    'Upcycling',
+    'Green Building',
+    'Sustainable Fashion'
+  ];
 
   const filteredItems = items.filter(item =>
     item.toLowerCase().includes(searchText.toLowerCase())
@@ -70,4 +64,4 @@ const SearchContainer: React.FC<SearchContainerProps> = ({ placeholder = 'Search
   );
 };
 
-export default SearchContainer;
+export default CleanEarthSearch;

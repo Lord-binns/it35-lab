@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { IonContent, IonGrid, IonRow, IonCol, IonCard, IonCardContent, IonImg, IonText, IonIcon, IonButton } from '@ionic/react';
 import { heart, heartOutline } from 'ionicons/icons';
 
-const FavoritesContainer: React.FC = () => {
+const CleanEarthFavorites: React.FC = () => {
   const [favorites, setFavorites] = useState<{ title: string; img: string; liked: boolean }[]>([
-    { title: 'Relaxing Beach', img: 'https://www.gifcen.com/wp-content/uploads/2021/03/passover-gif-5.gif', liked: false },
-    { title: 'Cozy Fireplace', img: 'https://i.makeagif.com/media/1-07-2019/RSqEi_.gif', liked: false },
-    { title: 'Mountain Adventure', img: 'https://i.pinimg.com/originals/75/98/71/759871bc3cd242ae9c0bfd1fd058bdb0.gif', liked: false }
+    { title: 'Recycling for a Greener Future', img: 'https://i.pinimg.com/originals/8d/a4/3c/8da43c86a7c3546afe9d20336c09ff2c.gif', liked: false },
+    { title: 'Tree Planting Initiative', img: 'https://i.pinimg.com/originals/18/42/81/184281f0fe87517a950beb8112c308dd.gif', liked: false },
+    { title: 'Clean Energy Revolution', img: 'https://i.pinimg.com/originals/93/85/ae/9385aefadd2d6b0cafa6d95e47f87e32.gif', liked: false }
   ]);
 
   const toggleLike = (index: number) => {
@@ -21,10 +21,10 @@ const FavoritesContainer: React.FC = () => {
             <IonCol size="12" sizeMd="4" key={index}>
               <IonCard>
                 <IonImg src={item.img} alt={item.title} />
-                <IonCardContent>
+                <IonCardContent className="text-center">
                   <IonText>{item.title}</IonText>
                   <IonButton fill="clear" onClick={() => toggleLike(index)}>
-                    <IonIcon icon={item.liked ? heart : heartOutline} color={item.liked ? 'danger' : 'medium'} />
+                    <IonIcon icon={item.liked ? heart : heartOutline} color={item.liked ? 'success' : 'medium'} />
                   </IonButton>
                 </IonCardContent>
               </IonCard>
@@ -36,4 +36,4 @@ const FavoritesContainer: React.FC = () => {
   );
 };
 
-export default FavoritesContainer;
+export default CleanEarthFavorites;
